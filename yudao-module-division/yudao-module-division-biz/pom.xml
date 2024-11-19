@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>cn.iocoder.boot</groupId>
+        <artifactId>yudao-module-division</artifactId>
+        <version>${revision}</version> <!-- 修改 version 为 ${revision} -->
+    </parent>
+
+    <artifactId>yudao-module-division-biz</artifactId>
+    <packaging>jar</packaging> <!-- 确保 packaging 为 jar -->
+
+    <name>${project.artifactId}</name> <!-- 修改 name 为 ${project.artifactId} -->
+    <description> <!-- 新增 description 为该模块的描述 -->
+        division 模块，主要实现 XXX、YYY、ZZZ 等功能。
+    </description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>  <!-- 修改依赖，这里引入的都是比较常用的业务组件、技术组件 -->
+        <dependency>
+            <groupId>cn.iocoder.boot</groupId>
+            <artifactId>yudao-module-division-api</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+        <!-- Web 相关 -->
+        <dependency>
+            <groupId>cn.iocoder.boot</groupId>
+            <artifactId>yudao-spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.iocoder.boot</groupId>
+            <artifactId>yudao-spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <!-- DB 相关 -->
+        <dependency>
+            <groupId>cn.iocoder.boot</groupId>
+            <artifactId>yudao-spring-boot-starter-mybatis</artifactId>
+        </dependency>
+
+        <!-- Test 测试相关 -->
+        <dependency>
+            <groupId>cn.iocoder.boot</groupId>
+            <artifactId>yudao-spring-boot-starter-test</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.iocoder.boot</groupId>
+            <artifactId>yudao-spring-boot-starter-excel</artifactId>
+        </dependency>
+    </dependencies>
+</project>

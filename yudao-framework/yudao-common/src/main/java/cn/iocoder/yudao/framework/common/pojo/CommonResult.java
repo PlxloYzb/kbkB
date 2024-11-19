@@ -63,9 +63,10 @@ public class CommonResult<T> implements Serializable {
     public static <T> CommonResult<T> success(T data) {
         CommonResult<T> result = new CommonResult<>();
         result.code = GlobalErrorCodeConstants.SUCCESS.getCode();
-        result.data = data;
         result.msg = "";
+        result.data = data;
         return result;
+
     }
 
     public static boolean isSuccess(Integer code) {
