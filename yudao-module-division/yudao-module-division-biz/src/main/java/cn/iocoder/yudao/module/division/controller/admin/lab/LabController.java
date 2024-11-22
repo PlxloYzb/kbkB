@@ -116,10 +116,6 @@ public class LabController {
     @Operation(summary = "预览导入数据")
     @PreAuthorize("@ss.hasPermission('division:lab:import')")
     public CommonResult<List<LabRespVO>> previewImportData(@RequestPart("file") MultipartFile file) throws IOException {
-//        if (file == null || file.isEmpty()) {
-//            log.error("未接收到文件");
-//            return CommonResult.error("未接收到文件");
-//        }
         List<LabRespVO> previewList = labService.previewImportData(file);
         return success(previewList);
     }
@@ -160,7 +156,6 @@ public class LabController {
                 writer.write("{\"code\":500,\"message\":\"获取文件数据失败\"}");
                 writer.flush();
             } catch (IOException ioException) {
-//                log.error("Error writing error response", ioException);
             }
             return;
         }
@@ -199,7 +194,6 @@ public class LabController {
                 writer.write("{\"code\":500,\"message\":\"导出文件失败\"}");
                 writer.flush();
             } catch (IOException ioException) {
-//                log.error("Error writing error response", ioException);
             }
             return;
         }
@@ -214,7 +208,6 @@ public class LabController {
             servletOutputStream.flush();
         } catch (IOException e) {
             // 如果在写入响应时发生异常，记录错误日志
-//            log.error("Error writing zip to response", e);
             // 响应已经提交，无法返回错误信息
         }
     }

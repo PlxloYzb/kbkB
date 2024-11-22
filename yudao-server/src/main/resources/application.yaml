@@ -338,6 +338,26 @@ app:
     elementAGradeRange: 44-48
     elementBGradeRange: 44-50
     elementCGradeRange: 44-50
+    niGradeRange: 44-50
+    coGradeRange: 44-50
+    feGradeRange: 44-50
+    mnGradeRange: 44-50
+    mgGradeRange: 44-50
+    alGradeRange: 44-50
+    scGradeRange: 44-50
+    crGradeRange: 44-50
+    znGradeRange: 44-50
+    caGradeRange: 44-50
+    sio2GradeRange: 44-50
+    fe2PlusGradeRange: 44-50
+    cr6PlusGradeRange: 44-50
+    moistureGradeRange: 44-50
+    tfeGradeRange: 44-50
+    cr2o3GradeRange: 44-50
+    feoGradeRange: 44-50
+    mgoGradeRange: 44-50
+    crFeRatioRange: 44-50
+    cr2o3FeoRatioRange: 44-50
     slurryConcentrationRange: 10-25
     slurryDensityRange: 5-10
 

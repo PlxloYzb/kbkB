@@ -21,23 +21,91 @@ public class LabRespVO {
     @ExcelProperty("样品编号")
     private String sampleNumber;
 
-    @Schema(description = "元素A品位（百分数，保留至三位小数）", example = "lab无")
-    @ExcelProperty("元素A品位（百分数，保留至三位小数）")
-    private BigDecimal elementAGrade;
+    @Schema(description = "Ni品位（百分数，保留至三位小数）",requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
+    @ExcelProperty("Ni品位（百分数，保留至三位小数）")
+    private BigDecimal niGrade;
 
-    @Schema(description = "元素B品位（百分数，保留至三位小数）", example = "lab无")
-    @ExcelProperty("元素B品位（百分数，保留至三位小数）")
-    private BigDecimal elementBGrade;
+    @Schema(description = "Co品位（百分数，保留至三位小数）",requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
+    @ExcelProperty("Co品位（百分数，保留至三位小数）")
+    private BigDecimal coGrade;
 
-    @Schema(description = "元素C品位（百分数，保留至三位小数）", example = "lab无")
-    @ExcelProperty("元素C品位（百分数，保留至三位小数）")
-    private BigDecimal elementCGrade;
+    @Schema(description = "Fe品位（百分数，保留至三位小数）",requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
+    @ExcelProperty("Fe品位（百分数，保留至三位小数）")
+    private BigDecimal feGrade;
 
-    @Schema(description = "矿浆浓度（百分数，保留至两位小数）", example = "lab无")
+    @Schema(description = "Mn品位（百分数，保留至三位小数）",requiredMode = Schema.RequiredMode.REQUIRED,example = "lab无")
+    @ExcelProperty("Mn品位（百分数，保留至三位小数）")
+    private BigDecimal mnGrade;
+
+    @Schema(description = "Mg品位（百分数，保留至三位小数）",requiredMode = Schema.RequiredMode.REQUIRED,example = "lab无")
+    @ExcelProperty("Mg品位（百分数，保留至三位小数）")
+    private BigDecimal mgGrade;
+
+    @Schema(description = "Al品位（百分数，保留至三位小数）",requiredMode = Schema.RequiredMode.REQUIRED,example = "lab无")
+    @ExcelProperty("Al品位（百分数，保留至三位小数）")
+    private BigDecimal alGrade;
+
+    @Schema(description = "Sc品位（百分数，保留至三位小数）",requiredMode = Schema.RequiredMode.REQUIRED,example = "lab无")
+    @ExcelProperty("Sc品位（百分数，保留至三位小数）")
+    private BigDecimal scGrade;
+
+    @Schema(description = "Cr品位（百分数，保留至三位小数）",requiredMode = Schema.RequiredMode.REQUIRED,example = "lab无")
+    @ExcelProperty("Cr品位（百分数，保留至三位小数）")
+    private BigDecimal crGrade;
+
+    @Schema(description = "Zn品位（百分数，保留至三位小数）",requiredMode = Schema.RequiredMode.REQUIRED,example = "lab无")
+    @ExcelProperty("Zn品位（百分数，保留至三位小数）")
+    private BigDecimal znGrade;
+
+    @Schema(description = "Ca品位（百分数，保留至三位小数）",requiredMode = Schema.RequiredMode.REQUIRED,example = "lab无")
+    @ExcelProperty("Ca品位（百分数，保留至三位小数）")
+    private BigDecimal caGrade;
+
+    @Schema(description = "SiO2品位（百分数，保留至三位小数）",requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
+    @ExcelProperty("SiO2品位（百分数，保留至三位小数）")
+    private BigDecimal sio2Grade;
+
+    @Schema(description = "Fe2+品位（百分数，保留至三位小数）",requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
+    @ExcelProperty("Fe2+品位（百分数，保留至三位小数）")
+    private BigDecimal fe2PlusGrade;
+
+    @Schema(description = "Cr6+品位（百分数，保留至三位小数）",requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
+    @ExcelProperty("Cr6+品位（百分数，保留至三位小数）")
+    private BigDecimal cr6PlusGrade;
+
+    @Schema(description = "Moisture品位（百分数，保留至三位小数）",requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
+    @ExcelProperty("Moisture品位（百分数，保留至三位小数）")
+    private BigDecimal moistureGrade;
+
+    @Schema(description = "TFe品位（百分数，保留至三位小数）",requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
+    @ExcelProperty("TFe品位（百分数，保留至三位小数）")
+    private BigDecimal tfeGrade;
+
+    @Schema(description = "Cr2O3品位（百分数，保留至三位小数）",requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
+    @ExcelProperty("Cr2O3品位（百分数，保留至三位小数）")
+    private BigDecimal cr2o3Grade;
+
+    @Schema(description = "FeO品位（百分数，保留至三位小数）",requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
+    @ExcelProperty("FeO品位（百分数，保留至三位小数）")
+    private BigDecimal feoGrade;
+
+    @Schema(description = "MgO品位（百分数，保留至三位小数）",requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
+    @ExcelProperty("MgO品位（百分数，保留至三位小数）")
+    private BigDecimal mgoGrade;
+
+    @Schema(description = "Cr/Fe比率（百分数，保留至三位小数）",requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
+    @ExcelProperty("Cr/Fe比率（百分数，保留至三位小数）")
+    private BigDecimal crFeRatio;
+
+    @Schema(description = "Cr2O3/FeO比率（百分数，保留至三位小数）",requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
+    @ExcelProperty("Cr2O3/FeO比率（百分数，保留至三位小数）")
+    private BigDecimal cr2o3FeoRatio;
+
+    @Schema(description = "矿浆浓度（百分数，保留至两位小数）",requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
     @ExcelProperty("矿浆浓度（百分数，保留至两位小数）")
     private BigDecimal slurryConcentration;
 
-    @Schema(description = "矿浆密度（保留至三位小数）", example = "lab无")
+    @Schema(description = "矿浆密度（保留至三位小数）",requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
     @ExcelProperty("矿浆密度（保留至三位小数）")
     private BigDecimal slurryDensity;
 
@@ -45,9 +113,9 @@ public class LabRespVO {
     @ExcelProperty("送样时间")
     private LocalDateTime samplingTime;
 
-    @Schema(description = "上传时间", requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
-    @ExcelProperty("上传时间")
-    private LocalDateTime uploadTime;
+//    @Schema(description = "上传时间", requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
+//    @ExcelProperty("上传时间")
+//    private LocalDateTime uploadTime;
 
     @Schema(description = "操作人员", requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
     @ExcelProperty("操作人员")

@@ -38,21 +38,107 @@ public class LabDO extends BaseDO {
      * 样品编号
      */
     private String sampleNumber;
+
     /**
-     * 元素A品位（百分数，保留至三位小数）
+     * Ni品位（百分数，保留至三位小数）
      */
-    private BigDecimal elementAGrade;
+    private BigDecimal niGrade;
+
     /**
-     * 元素B品位（百分数，保留至三位小数）
+     * Co品位（百分数，保留至三位小数）
      */
-    private BigDecimal elementBGrade;
+    private BigDecimal coGrade;
+
     /**
-     * 元素C品位（百分数，保留至三位小数）
+     * Fe品位（百分数，保留至三位小数）
      */
-    private BigDecimal elementCGrade;
+    private BigDecimal feGrade;
+
     /**
-     * 矿浆浓度（百分数，保留至两位小数）
+     * Mn品位（百分数，保留至三位小数）
      */
+    private BigDecimal mnGrade;
+
+    /**
+     * Mg品位（百分数，保留至三位小数）
+     */
+    private BigDecimal mgGrade;
+
+    /**
+     * Al品位（百分数，保留至三位小数）
+     */
+    private BigDecimal alGrade;
+
+    /**
+     * Sc品位（百分数，保留至三位小数）
+     */
+    private BigDecimal scGrade;
+
+    /**
+     * Cr品位（百分数，保留至三位小数）
+     */
+    private BigDecimal crGrade;
+
+    /**
+     * Zn品位（百分数，保留至三位小数）
+     */
+    private BigDecimal znGrade;
+
+    /**
+     * Ca品位（百分数，保留至三位小数）
+     */
+    private BigDecimal caGrade;
+
+    /**
+     * SiO2品位（百分数，保留至三位小数）
+     */
+    private BigDecimal sio2Grade;
+
+    /**
+     * Fe2+品位（百分数，保留至三位小数）
+     */
+    private BigDecimal fe2PlusGrade;
+
+    /**
+     * Cr6+品位（百分数，保留至三位小数）
+     */
+    private BigDecimal cr6PlusGrade;
+
+    /**
+     * Moisture品位（百分数，保留至三位小数）
+     */
+    private BigDecimal moistureGrade;
+
+    /**
+     * TFe品位（百分数，保留至三位小数）
+     */
+    private BigDecimal tfeGrade;
+
+    /**
+     * Cr2O3品位（百分数，保留至三位小数）
+     */
+    private BigDecimal cr2o3Grade;
+
+    /**
+     * FeO品位（百分数，保留至三位小数）
+     */
+    private BigDecimal feoGrade;
+
+    /**
+     * MgO品位（百分数，保留至三位小数）
+     */
+    private BigDecimal mgoGrade;
+
+    /**
+     * Cr/Fe比率（百分数，保留至三位小数）
+     */
+    private BigDecimal crFeRatio;
+
+    /**
+     * Cr2O3/FeO比率（百分数，保留至三位小数）
+     */
+    private BigDecimal cr2o3FeoRatio;
+
     private BigDecimal slurryConcentration;
     /**
      * 矿浆密度（保留至三位小数）
@@ -62,10 +148,10 @@ public class LabDO extends BaseDO {
      * 送样时间
      */
     private LocalDateTime samplingTime;
-    /**
-     * 上传时间
-     */
-    private LocalDateTime uploadTime;
+//    /**
+//     * 上传时间
+//     */
+//    private LocalDateTime uploadTime;
     /**
      * 操作人员
      */
