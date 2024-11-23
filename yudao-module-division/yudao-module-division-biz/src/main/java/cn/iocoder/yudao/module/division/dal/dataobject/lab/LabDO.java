@@ -148,10 +148,6 @@ public class LabDO extends BaseDO {
      * 送样时间
      */
     private LocalDateTime samplingTime;
-//    /**
-//     * 上传时间
-//     */
-//    private LocalDateTime uploadTime;
     /**
      * 操作人员
      */
