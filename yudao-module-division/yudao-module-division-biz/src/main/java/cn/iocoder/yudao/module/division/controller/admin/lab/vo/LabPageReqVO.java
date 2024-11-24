@@ -85,13 +85,28 @@ public class LabPageReqVO extends PageParam {
     @Schema(description = "矿浆密度（保留至三位小数）", example = "lab无")
     private BigDecimal[] slurryDensity;
 
+    @Schema(description = "18目（保留至两位小数）", example = "lab无")
+    private BigDecimal[] mu18;
+
+    @Schema(description = "60目（保留至两位小数）", example = "lab无")
+    private BigDecimal[] mu60;
+
+    @Schema(description = "80目（保留至两位小数）", example = "lab无")
+    private BigDecimal[] mu80;
+
+    @Schema(description = "100目（保留至两位小数）", example = "lab无")
+    private BigDecimal[] mu100;
+
+    @Schema(description = "深度（保留至两位小数）", example = "lab无")
+    private BigDecimal[] depth;
+
+    @Schema(description = "岩性", example = "lab无")
+    private String lithology;
+
     @Schema(description = "送样时间", example = "lab无")
     @DateTimeFormat(pattern = FORMAT_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND)
     private LocalDateTime[] samplingTime;
 
-//    @Schema(description = "上传时间", example = "lab无")
-//    @DateTimeFormat(pattern = FORMAT_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND)
-//    private LocalDateTime[] uploadTime;
 
     @Schema(description = "操作人员", example = "lab无")
     private String operator;

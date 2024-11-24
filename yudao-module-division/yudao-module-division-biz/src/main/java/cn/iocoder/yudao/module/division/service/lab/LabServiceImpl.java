@@ -272,33 +272,41 @@ public class LabServiceImpl implements LabService {
                 LabSaveReqVO lab = new LabSaveReqVO();
 
                 lab.setSampleNumber(getCellStringValue(row, 0));
-                lab.setNiGrade(getCellBigDecimalValue(row, 1));
-                lab.setCoGrade(getCellBigDecimalValue(row, 2));
-                lab.setFeGrade(getCellBigDecimalValue(row, 3));
-                lab.setMnGrade(getCellBigDecimalValue(row, 4));
-                lab.setMgGrade(getCellBigDecimalValue(row, 5));
-                lab.setAlGrade(getCellBigDecimalValue(row, 6));
-                lab.setScGrade(getCellBigDecimalValue(row, 7));
-                lab.setCrGrade(getCellBigDecimalValue(row, 8));
-                lab.setZnGrade(getCellBigDecimalValue(row, 9));
-                lab.setCaGrade(getCellBigDecimalValue(row, 10));
-                lab.setSio2Grade(getCellBigDecimalValue(row, 11));
-                lab.setFe2PlusGrade(getCellBigDecimalValue(row, 12));
-                lab.setCr6PlusGrade(getCellBigDecimalValue(row, 13));
-                lab.setMoistureGrade(getCellBigDecimalValue(row, 14));
-                lab.setTfeGrade(getCellBigDecimalValue(row, 15));
-                lab.setCr2o3Grade(getCellBigDecimalValue(row, 16));
-                lab.setFeoGrade(getCellBigDecimalValue(row, 17));
-                lab.setMgoGrade(getCellBigDecimalValue(row, 18));
-                lab.setCrFeRatio(getCellBigDecimalValue(row, 19));
-                lab.setCr2o3FeoRatio(getCellBigDecimalValue(row, 20));
-                lab.setSlurryConcentration(getCellBigDecimalValue(row, 21));
-                lab.setSlurryDensity(getCellBigDecimalValue(row, 22));
-                lab.setSamplingTime(getCellLocalDateTimeValue(row, 23));
-//                lab.setUploadTime(getCellLocalDateTimeValue(row, 24));
-                lab.setOperator(getCellStringValue(row, 25));
-                lab.setReviewer(getCellStringValue(row, 26));
-                lab.setReviewNote(getCellStringValue(row, 27));
+                lab.setSamplingTime(getCellLocalDateTimeValue(row, 1));
+                lab.setOperator(getCellStringValue(row, 2));
+                lab.setNiGrade(getCellBigDecimalValue(row, 3));
+                lab.setCoGrade(getCellBigDecimalValue(row, 4));
+                lab.setFeGrade(getCellBigDecimalValue(row, 5));
+                lab.setMnGrade(getCellBigDecimalValue(row, 6));
+                lab.setMgGrade(getCellBigDecimalValue(row, 7));
+                lab.setAlGrade(getCellBigDecimalValue(row, 8));
+                lab.setSlurryConcentration(getCellBigDecimalValue(row, 9));
+                lab.setSlurryDensity(getCellBigDecimalValue(row, 10));
+                lab.setCrGrade(getCellBigDecimalValue(row, 11));
+                lab.setTfeGrade(getCellBigDecimalValue(row, 12));
+                lab.setCr2o3Grade(getCellBigDecimalValue(row, 13));
+                lab.setFeoGrade(getCellBigDecimalValue(row, 14));
+                lab.setCrFeRatio(getCellBigDecimalValue(row, 15));
+                lab.setCr2o3FeoRatio(getCellBigDecimalValue(row, 16));
+                lab.setMoistureGrade(getCellBigDecimalValue(row, 17));
+                lab.setReviewer(getCellStringValue(row, 18));
+                lab.setReviewNote(getCellStringValue(row, 19));
+                lab.setMgoGrade(getCellBigDecimalValue(row, 20));
+                lab.setScGrade(getCellBigDecimalValue(row, 21));
+                lab.setZnGrade(getCellBigDecimalValue(row, 22));
+                lab.setCaGrade(getCellBigDecimalValue(row, 23));
+                lab.setSio2Grade(getCellBigDecimalValue(row, 24));
+                lab.setFe2PlusGrade(getCellBigDecimalValue(row, 25));
+                lab.setCr6PlusGrade(getCellBigDecimalValue(row, 26));
+
+
+
+
+
+
+
+
+
 
                 labList.add(lab);
             }
@@ -436,7 +444,7 @@ public class LabServiceImpl implements LabService {
 
     private Map<String, Boolean> checkSuspiciousElements(LabSaveReqVO lab) {
         Map<String, Boolean> suspiciousMap = new HashMap<>();
-        // niGrade
+// niGrade
         BigDecimal minNiGrade = new BigDecimal(niGradeRange.split("-")[0]);
         BigDecimal maxNiGrade = new BigDecimal(niGradeRange.split("-")[1]);
         Boolean isNiGradeSuspicious = false;
@@ -446,7 +454,7 @@ public class LabServiceImpl implements LabService {
         suspiciousMap.put("niGrade", isNiGradeSuspicious);
 
 
-        // coGrade
+// coGrade
         BigDecimal minCoGrade = new BigDecimal(coGradeRange.split("-")[0]);
         BigDecimal maxCoGrade = new BigDecimal(coGradeRange.split("-")[1]);
         Boolean isCoGradeSuspicious = false;
@@ -618,16 +626,18 @@ public class LabServiceImpl implements LabService {
         suspiciousMap.put("cr2o3FeoRatio", isCr2o3FeoRatioSuspicious);
 
 
-        // slurryConcentration
+// slurryConcentration
         BigDecimal minSlurryConcentration = new BigDecimal(slurryConcentrationRange.split("-")[0]);
         BigDecimal maxSlurryConcentration = new BigDecimal(slurryConcentrationRange.split("-")[1]);
         Boolean isSlurryConcentrationSuspicious = false;
-        if (lab.getCr2o3FeoRatio() != null) {
-            isSlurryConcentrationSuspicious = lab.getSlurryConcentration().compareTo(minSlurryConcentration) < 0 || lab.getSlurryConcentration().compareTo(maxSlurryConcentration) > 0;
-        }
+
+        if (lab.getSlurryConcentration() != null) {
+                isSlurryConcentrationSuspicious = lab.getSlurryConcentration().compareTo(minSlurryConcentration) < 0 || lab.getSlurryConcentration().compareTo(maxSlurryConcentration) > 0;
+            }
+
         suspiciousMap.put("slurryConcentration", isSlurryConcentrationSuspicious);
 
-        // slurryDensity
+// slurryDensity
         BigDecimal minSlurryDensity = new BigDecimal(slurryDensityRange.split("-")[0]);
         BigDecimal maxSlurryDensity = new BigDecimal(slurryDensityRange.split("-")[1]);
         Boolean isSlurryDensitySuspicious = false;
@@ -635,19 +645,6 @@ public class LabServiceImpl implements LabService {
             isSlurryDensitySuspicious = lab.getSlurryDensity().compareTo(minSlurryDensity) < 0 || lab.getSlurryDensity().compareTo(maxSlurryDensity) > 0;
         }
         suspiciousMap.put("slurryDensity", isSlurryDensitySuspicious);
-
-//        BigDecimal minSlurryConcentration = new BigDecimal(slurryConcentrationRange.split("-")[0]);
-//        BigDecimal maxSlurryConcentration = new BigDecimal(slurryConcentrationRange.split("-")[1]);
-//        suspiciousMap.put("slurryConcentration", lab.getSlurryConcentration().compareTo(minSlurryConcentration) < 0 || lab.getSlurryConcentration().compareTo(maxSlurryConcentration) > 0
-//        );
-
-//        BigDecimal minSlurryDensityRange = new BigDecimal(slurryDensityRange.split("-")[0]);
-//        BigDecimal maxSlurryDensityRange = new BigDecimal(slurryDensityRange.split("-")[1]);
-//        suspiciousMap.put("slurryDensity", lab.getSlurryDensity().compareTo(minSlurryDensityRange) < 0 || lab.getSlurryDensity().compareTo(maxSlurryDensityRange) > 0
-//        );
-
-
-
 
         return suspiciousMap;
     }
