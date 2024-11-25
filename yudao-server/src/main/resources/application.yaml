@@ -357,5 +357,11 @@ app:
     cr2o3FeoRatioRange: 45-50
     slurryConcentrationRange: 8-25
     slurryDensityRange: 1-1.3
+    mu18Range: 0-10
+    mu60Range: 0-10
+    mu80Range: 0-10
+    mu100Range: 0-10
+    depthRange: 0-100
+
 
 debug: false

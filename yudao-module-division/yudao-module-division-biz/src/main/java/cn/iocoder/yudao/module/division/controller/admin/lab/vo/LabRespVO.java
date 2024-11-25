@@ -109,13 +109,33 @@ public class LabRespVO {
     @ExcelProperty("矿浆密度（保留至三位小数）")
     private BigDecimal slurryDensity;
 
+    @Schema(description = "18目",requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
+    @ExcelProperty("18目")
+    private BigDecimal mu18;
+
+    @Schema(description = "60目",requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
+    @ExcelProperty("60目")
+    private BigDecimal mu60;
+
+    @Schema(description = "80目",requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
+    @ExcelProperty("80目")
+    private BigDecimal mu80;
+
+    @Schema(description = "100目",requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
+    @ExcelProperty("100目")
+    private BigDecimal mu100;
+
+    @Schema(description = "深度",requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
+    @ExcelProperty("深度")
+    private BigDecimal depth;
+
+    @Schema(description = "岩性", requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
+    @ExcelProperty("岩性")
+    private String lithology;
+
     @Schema(description = "送样时间", requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
     @ExcelProperty("送样时间")
     private LocalDateTime samplingTime;
-
-//    @Schema(description = "上传时间", requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
-//    @ExcelProperty("上传时间")
-//    private LocalDateTime uploadTime;
 
     @Schema(description = "操作人员", requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
     @ExcelProperty("操作人员")

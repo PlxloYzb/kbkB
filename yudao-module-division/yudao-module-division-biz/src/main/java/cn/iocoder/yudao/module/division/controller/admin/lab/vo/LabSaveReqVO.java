@@ -89,9 +89,23 @@ public class LabSaveReqVO {
     @NotNull(message = "送样时间不能为空")
     private LocalDateTime samplingTime;
 
-//    @Schema(description = "上传时间", requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
-//    @NotNull(message = "上传时间不能为空")
-//    private LocalDateTime uploadTime;
+    @Schema(description = "18目", requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
+    private BigDecimal mu18;
+
+    @Schema(description = "60目", requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
+    private BigDecimal mu60;
+
+    @Schema(description = "80目", requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
+    private BigDecimal mu80;
+
+    @Schema(description = "100目", requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
+    private BigDecimal mu100;
+
+    @Schema(description = "深度）", requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
+    private BigDecimal depth;
+
+    @Schema(description = "岩性", example = "lab无")
+    private String lithology;
 
     @Schema(description = "操作人员", requiredMode = Schema.RequiredMode.REQUIRED, example = "lab无")
     @NotEmpty(message = "操作人员不能为空")

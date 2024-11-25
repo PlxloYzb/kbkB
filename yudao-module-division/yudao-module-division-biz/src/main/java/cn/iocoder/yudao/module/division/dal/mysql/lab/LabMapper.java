@@ -43,7 +43,14 @@ public interface LabMapper extends BaseMapperX<LabDO> {
                 .betweenIfPresent(LabDO::getSlurryConcentration, reqVO.getSlurryConcentration())
                 .betweenIfPresent(LabDO::getSlurryDensity, reqVO.getSlurryDensity())
                 .betweenIfPresent(LabDO::getSamplingTime, reqVO.getSamplingTime())
-//                .betweenIfPresent(LabDO::getUploadTime, reqVO.getUploadTime())
+
+                .betweenIfPresent(LabDO::getMu18, reqVO.getMu18())
+                .betweenIfPresent(LabDO::getMu60, reqVO.getMu60())
+                .betweenIfPresent(LabDO::getMu80, reqVO.getMu80())
+                .betweenIfPresent(LabDO::getMu100, reqVO.getMu100())
+                .betweenIfPresent(LabDO::getDepth, reqVO.getDepth())
+                .likeIfPresent(LabDO::getLithology, reqVO.getLithology())
+
                 .likeIfPresent(LabDO::getOperator, reqVO.getOperator())
                 .likeIfPresent(LabDO::getReviewer, reqVO.getReviewer())
                 .eqIfPresent(LabDO::getReviewNote, reqVO.getReviewNote())

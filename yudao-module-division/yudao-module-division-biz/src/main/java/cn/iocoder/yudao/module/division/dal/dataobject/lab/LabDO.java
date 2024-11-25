@@ -166,4 +166,16 @@ public class LabDO extends BaseDO {
      */
     private Long importFileId;
 
+    private BigDecimal mu18;
+
+    private BigDecimal mu60;
+
+    private BigDecimal mu80;
+
+    private BigDecimal mu100;
+
+    private BigDecimal depth;
+
+    private String lithology;
+
 }

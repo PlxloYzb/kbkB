@@ -130,6 +130,22 @@ public class LabServiceImpl implements LabService {
     @Value("${app.import.slurryDensityRange}")
     private String slurryDensityRange;
 
+    @Value("${app.import.mu18Range}")
+    private String mu18Range;
+
+    @Value("${app.import.mu60Range}")
+    private String mu60Range;
+
+    @Value("${app.import.mu80Range}")
+    private String mu80Range;
+
+    @Value("${app.import.mu100Range}")
+    private String mu100Range;
+
+    @Value("${app.import.depthRange}")
+    private String depthRange;
+
+
 
 
     @Override
@@ -289,15 +305,23 @@ public class LabServiceImpl implements LabService {
                 lab.setCrFeRatio(getCellBigDecimalValue(row, 15));
                 lab.setCr2o3FeoRatio(getCellBigDecimalValue(row, 16));
                 lab.setMoistureGrade(getCellBigDecimalValue(row, 17));
-                lab.setReviewer(getCellStringValue(row, 18));
-                lab.setReviewNote(getCellStringValue(row, 19));
-                lab.setMgoGrade(getCellBigDecimalValue(row, 20));
-                lab.setScGrade(getCellBigDecimalValue(row, 21));
-                lab.setZnGrade(getCellBigDecimalValue(row, 22));
-                lab.setCaGrade(getCellBigDecimalValue(row, 23));
-                lab.setSio2Grade(getCellBigDecimalValue(row, 24));
-                lab.setFe2PlusGrade(getCellBigDecimalValue(row, 25));
-                lab.setCr6PlusGrade(getCellBigDecimalValue(row, 26));
+
+                lab.setMu18(getCellBigDecimalValue(row, 18));
+                lab.setMu60(getCellBigDecimalValue(row, 19));
+                lab.setMu80(getCellBigDecimalValue(row, 20));
+                lab.setMu100(getCellBigDecimalValue(row, 21));
+                lab.setDepth(getCellBigDecimalValue(row, 22));
+                lab.setLithology(getCellStringValue(row, 23));
+
+                lab.setReviewer(getCellStringValue(row, 24));
+                lab.setReviewNote(getCellStringValue(row, 25));
+                lab.setMgoGrade(getCellBigDecimalValue(row, 26));
+                lab.setScGrade(getCellBigDecimalValue(row, 27));
+                lab.setZnGrade(getCellBigDecimalValue(row, 28));
+                lab.setCaGrade(getCellBigDecimalValue(row, 29));
+                lab.setSio2Grade(getCellBigDecimalValue(row, 30));
+                lab.setFe2PlusGrade(getCellBigDecimalValue(row, 31));
+                lab.setCr6PlusGrade(getCellBigDecimalValue(row, 32));
 
 
 
@@ -645,6 +669,51 @@ public class LabServiceImpl implements LabService {
             isSlurryDensitySuspicious = lab.getSlurryDensity().compareTo(minSlurryDensity) < 0 || lab.getSlurryDensity().compareTo(maxSlurryDensity) > 0;
         }
         suspiciousMap.put("slurryDensity", isSlurryDensitySuspicious);
+
+// 18目
+        BigDecimal minMu18 = new BigDecimal(mu18Range.split("-")[0]);
+        BigDecimal maxMu18 = new BigDecimal(mu18Range.split("-")[1]);
+        Boolean isMu18Suspicious = false;
+        if (lab.getMu18() != null) {
+            isMu18Suspicious = lab.getMu18().compareTo(minMu18) < 0 || lab.getMu18().compareTo(maxMu18) > 0;
+        }
+        suspiciousMap.put("slurryDensity", isMu18Suspicious);
+
+// 60目
+        BigDecimal minMu60 = new BigDecimal(mu60Range.split("-")[0]);
+        BigDecimal maxMu60 = new BigDecimal(mu60Range.split("-")[1]);
+        Boolean isMu60Suspicious = false;
+        if (lab.getMu60() != null) {
+            isMu60Suspicious = lab.getMu60().compareTo(minMu60) < 0 || lab.getMu60().compareTo(maxMu60) > 0;
+        }
+        suspiciousMap.put("slurryDensity", isMu60Suspicious);
+
+// 80目
+        BigDecimal minMu80 = new BigDecimal(mu80Range.split("-")[0]);
+        BigDecimal maxMu80 = new BigDecimal(mu80Range.split("-")[1]);
+        Boolean isMu80Suspicious = false;
+        if (lab.getMu80() != null) {
+            isMu80Suspicious = lab.getMu80().compareTo(minMu80) < 0 || lab.getMu80().compareTo(maxMu80) > 0;
+        }
+        suspiciousMap.put("slurryDensity", isMu80Suspicious);
+
+// 100目
+        BigDecimal minMu100 = new BigDecimal(mu100Range.split("-")[0]);
+        BigDecimal maxMu100 = new BigDecimal(mu100Range.split("-")[1]);
+        Boolean isMu100Suspicious = false;
+        if (lab.getMu100() != null) {
+            isMu100Suspicious = lab.getMu100().compareTo(minMu100) < 0 || lab.getMu100().compareTo(maxMu100) > 0;
+        }
+        suspiciousMap.put("slurryDensity", isMu100Suspicious);
+
+// depth
+        BigDecimal minDepth = new BigDecimal(depthRange.split("-")[0]);
+        BigDecimal maxDepth = new BigDecimal(depthRange.split("-")[1]);
+        Boolean isDepthSuspicious = false;
+        if (lab.getDepth() != null) {
+            isDepthSuspicious = lab.getDepth().compareTo(minDepth) < 0 || lab.getDepth().compareTo(maxDepth) > 0;
+        }
+        suspiciousMap.put("slurryDensity", isDepthSuspicious);
 
         return suspiciousMap;
     }
