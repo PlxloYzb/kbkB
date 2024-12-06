@@ -21,5 +21,7 @@ public interface ErrorCodeConstants {
 
     ErrorCode OPERATOR_NAME_REQUIRED = new ErrorCode(1_001_000_007, "请输入化验人员");
 
+    ErrorCode BENEFICIATION_NOT_EXISTS = new ErrorCode(1_001_000_008, "选矿每日数据不存在");
+
 
 }
