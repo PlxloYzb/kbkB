@@ -46,6 +46,10 @@ public class BeneficiationDO extends BaseDO {
      */
     private BigDecimal crProduction;
     /**
+     * 铬精矿夜班产量
+     */
+    private BigDecimal crProductionNight;
+    /**
      * 铬精矿转运量
      */
     private BigDecimal crTransportation;

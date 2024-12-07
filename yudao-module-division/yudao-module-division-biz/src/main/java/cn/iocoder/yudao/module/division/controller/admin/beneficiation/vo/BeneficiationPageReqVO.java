@@ -27,6 +27,10 @@ public class BeneficiationPageReqVO extends PageParam {
     @DateTimeFormat(pattern = FORMAT_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND)
     private BigDecimal[] crProduction;
 
+    @Schema(description = "铬精矿夜班产量")
+    @DateTimeFormat(pattern = FORMAT_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND)
+    private BigDecimal[] crProductionNight;
+
     @Schema(description = "铬精矿转运量")
     @DateTimeFormat(pattern = FORMAT_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND)
     private BigDecimal[] crTransportation;

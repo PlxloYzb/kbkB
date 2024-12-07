@@ -29,6 +29,10 @@ public class BeneficiationRespVO {
     @ExcelProperty("铬精矿产量")
     private BigDecimal crProduction;
 
+    @Schema(description = "铬精矿夜班产量")
+    @ExcelProperty("铬精矿产量")
+    private BigDecimal crProductionNight;
+
     @Schema(description = "铬精矿转运量")
     @ExcelProperty("铬精矿转运量")
     private BigDecimal crTransportation;

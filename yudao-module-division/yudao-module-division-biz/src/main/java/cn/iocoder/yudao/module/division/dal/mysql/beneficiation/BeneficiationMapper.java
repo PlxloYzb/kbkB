@@ -22,6 +22,7 @@ public interface BeneficiationMapper extends BaseMapperX<BeneficiationDO> {
                 .eqIfPresent(BeneficiationDO::getDataType, reqVO.getDataType())
                 .betweenIfPresent(BeneficiationDO::getTagTime, reqVO.getTagTime())
                 .betweenIfPresent(BeneficiationDO::getCrProduction, reqVO.getCrProduction())
+                .betweenIfPresent(BeneficiationDO::getCrProductionNight, reqVO.getCrProductionNight())
                 .betweenIfPresent(BeneficiationDO::getCrTransportation, reqVO.getCrTransportation())
                 .betweenIfPresent(BeneficiationDO::getCrTailing, reqVO.getCrTailing())
                 .betweenIfPresent(BeneficiationDO::getCrMarine, reqVO.getCrMarine())
